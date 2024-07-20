@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
-export const AuthLayout = () => {
+export const PanelLayout = () => {
     return (
         <div>
-            <h1>AuthLayout</h1>
+            <h1>PanelLaoyout</h1>
             <Outlet />
         </div>
     );
