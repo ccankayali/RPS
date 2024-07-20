@@ -1,0 +1,8 @@
+dist
+node_modules
+src/swagger/**/*
+.eslintrc.cjs
+yarn.lock
+package-lock.json
+.idea
+build
