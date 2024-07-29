@@ -1,2 +1,2 @@
-export const PANEL_PATH = '/dashboard'
+export const PANEL_PATH = '/Layout'
 export const ADMIN_PATH = '/admin'
