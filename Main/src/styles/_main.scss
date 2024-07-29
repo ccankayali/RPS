@@ -1,0 +1,40 @@
+$primary-color: #040b13;
+$background-color: #242444;
+$text-color: #ffffff;
+$input-background: #46648c;
+$button-background: #146ca4;
+$button-hover: #189de4;
+$button-active: #52b7e9;
+$button-text-color: #ffffff;
+$font-family: 'Roboto', sans-serif;
+
+* {
+    margin: 0;
+}
+
+html {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+#root {
+    padding: 0;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}

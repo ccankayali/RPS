@@ -1,4 +1,4 @@
-import { PANEL_PATH } from "../../../router/constants";
+import { PANEL_PATH } from "../../../../router/constants";
 
 export const DASHBOARD_ROUTES = {
   dashboard: {

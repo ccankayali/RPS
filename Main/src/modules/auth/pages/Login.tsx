@@ -5,10 +5,13 @@ import { ROUTES } from "../../../router/routes";
 import { LoginRequest } from "../models/Auth.models";
 import { useAuth } from "../hooks/useAuth";
 
+import '../../../styles/layout.scss';
+
 export const Login = () => {
     const [nologin, setLogin] = useState<LoginRequest>({ identifier: '', password: '' });
     const navigate = useNavigate();
     const { login, accessToken } = useAuth();
+    const authApi = `http://localhost:1337/api/auth/local`;
 
     const handleChange  = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -20,41 +23,45 @@ export const Login = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:1337/api/auth/local', nologin);
-            console.log('Logged', response.data);
+        const response = await axios.post(authApi, nologin);
+        if (response.status === 200) {
+            login({ accessToken: response.data.jwt });
             navigate(ROUTES.dashboard.path);
-        } catch (error) {
-            console.error('Error', error);
+        } else {
+            console.error('Hata');
         }
-    };
+    }
 
-    const handleLogin = () => {
-        login({ accessToken: Math.random().toString(16).substring(2) });
-        navigate(ROUTES.dashboard.path);
-    };
+    const handleLogin = async () => {
+        if (nologin.identifier && nologin.password) {
+            await handleSubmit;
+        } else {
+            console.error('Alanları Doldurun');
+        }
+    }
 
     useEffect(() => {
-        if (accessToken) {
+        if (accessToken) {  
             navigate(ROUTES.dashboard.path);
         }
     })
 
   return (
-    <div>
-        <h1>Login</h1>
+    <div className="login-container">
+        <div className="login-wrapper">
+        <h1 className="login-header">Sakai</h1>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="login-email">
                     <label>Email:</label>
                     <input
                         type="email"
                         name="identifier"
                         value={nologin.identifier}
-                        onChange={handleChange}
+                        onChange={handleChange} 
                         required
                     />
                 </div>
-                <div>
+                <div className="login-pass">
                     <label>Password:</label>
                     <input
                         type="password"
@@ -64,8 +71,9 @@ export const Login = () => {
                         required
                     />
                 </div>
-                <button onClick={handleLogin} type="submit">Login</button>
+                <button className="login-button" onClick={handleLogin} type="submit">Login</button>
             </form>
+        </div>
     </div>
   )
 }

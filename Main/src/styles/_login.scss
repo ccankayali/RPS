@@ -1,0 +1,64 @@
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $background-color;
+    color: $text-color;
+    height: 100vh;
+    
+        .login-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: $input-background;
+            border-radius: 2rem;
+            box-shadow: 0 0 20rem 3.5rem #46648c;
+            padding: 2rem;
+            width: 90%;
+            max-width: 35vh;
+        }
+
+        .login-header {
+            margin-bottom: 1rem;
+        }
+
+        .login email,
+        .login-pass {
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+            width: 100%;
+        }
+
+        .login-email label,
+        .login-pass label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-email input,
+        .login-pass input {
+            width: 100%;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 3rem;
+        }
+
+        .login-button{
+            width: 100%;
+            padding: 0.5rem;
+            background-color: $button-background;
+            border: none;
+            border-radius: 3rem;
+            cursor: pointer;
+        }
+
+        .login-button:hover {
+            background-color: $button-hover;
+        }
+
+        .login-button:active {
+            background-color: $button-active;
+        }
+
+    }

@@ -25,9 +25,8 @@ export const PanelLayout = () => {
   }, [accessToken, handleLogout, initUser])
 
   return (
-    <div>
-      <h1>Panel Layout</h1>
-      <pre>AccessToken: {accessToken}</pre>
+    <div className='panel-container'>
+      <pre className='access-token-panel'>AccessToken: {accessToken}</pre>
         <button onClick={handleLogout}>Logout</button>
       <Outlet />
     </div>

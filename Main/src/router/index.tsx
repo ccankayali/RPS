@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { ROUTES } from './routes';
-import { dashboardRoutes } from '../modules/panel/routes';
+import { dashboardRoutes } from '../modules/panel/dashboard/routes';
 import { NotFound } from '../core/pages/NotFound';
 import { AuthLayout } from '../core/layouts/auth/AuthLayout';
 import { authRoutes } from '../modules/auth/routes';
