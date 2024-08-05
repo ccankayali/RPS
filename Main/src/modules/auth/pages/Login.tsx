@@ -49,7 +49,10 @@ export const Login = () => {
   return (
     <div className="login-container">
         <div className="login-wrapper">
-        <h1 className="login-header">Sakai</h1>
+        <h1 className="login-header">
+            <img src="../../../../public/logo-white.svg" alt="Logo" />
+            <span className="logo-name">CAN</span>
+        </h1>
             <form onSubmit={handleSubmit}>
                 <div className="login-email">
                     <label>Email:</label>

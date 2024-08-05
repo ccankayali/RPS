@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: center;
     background-color: $background-color;
-    color: $text-color;
     height: 100vh;
+    color: #fff;
     
         .login-wrapper {
             display: flex;
@@ -21,6 +21,15 @@
 
         .login-header {
             margin-bottom: 1rem;
+            align-items: center;
+                .logo-name {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    font-size: 2rem;
+                    font-weight: bold;
+                }
         }
 
         .login email,

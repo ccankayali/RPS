@@ -1,0 +1,13 @@
+// layout.scss
+#app-sidebar-2 {
+    background-color: #ffffff; // Tamamen opak siyah arka plan
+    color: #ffffff; // Yazı rengini beyaz yapar
+    // şeffaflık
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.p-sidebar-mask {
+    background-color: rgba(0, 0, 0, 0.75); /* Mask rengini değiştirme */
+    backdrop-filter: blur(0.7px); /* Arka planı bulanıklaştırma */
+    transition: opacity 3s ease; /* Geçiş efektleri ekleme */
+  }
